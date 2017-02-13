@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+<br />
+<div class="jumbotron">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <span id="header">Converter Excel</span>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+    <div class="row">
+        @using (Html.BeginForm("convertExcel", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <div class="col-md-6">
+                <input class="thumbnail" type="file" name="UploadedFile" accept=".xls, .xlsx" />
+            </div>
+            <div class="col-md-6">
+                <input id="btnSubmit" type="submit" name="Submit" value="Converter" class="btn btn-primary" />
+            </div>
+        }
+    </div>
+</div>

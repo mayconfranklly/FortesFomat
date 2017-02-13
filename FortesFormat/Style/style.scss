@@ -1,0 +1,25 @@
+﻿@mixin nomeEmpresa($cor, $float, $paddind, $fontSize, $lineHeight, $cursor) {
+    color: $cor;
+    float: $float;
+    padding: $paddind;
+    font-size: $fontSize;
+    line-height: $lineHeight;
+    cursor: $cursor;
+}
+
+h3 {
+    color: rgba(255, 255, 255,1);
+    margin-left: 39%;
+}
+
+.name {
+    @include nomeEmpresa(#999999, right, 15px 15px, 1.5em, 20px,default);
+}
+
+#header {
+    @include nomeEmpresa(#5d5a5a, none, 15px 15px, 1.2em, 20px,default);
+}
+
+.thumbnail {
+    margin-top: 1%;
+}
