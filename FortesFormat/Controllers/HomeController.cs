@@ -46,11 +46,6 @@ namespace FortesFormat.Controllers
 
                     StringBuilder sb = new StringBuilder();
 
-                    //adiciona as colunas
-                    IEnumerable<string> columnNames = excel.Tables[0].Columns.Cast<DataColumn>().
-                                                      Select(column => column.ColumnName);
-                    sb.AppendLine(string.Join(";", columnNames));
-
                     //adiciona as linhas
                     foreach (DataRow row in excel.Tables[0].Rows)
                     {
@@ -59,7 +54,7 @@ namespace FortesFormat.Controllers
                     }
 
                     //aqui eu passo o stringBiulder para o meu arquivo auxiliar
-                    System.IO.File.WriteAllText(arqAux, sb.ToString());
+                    System.IO.File.WriteAllText(arqAux, sb.ToString(), Encoding.UTF8);
 
                     //deleto o arquivo pdf que tinha salvado
                     System.IO.File.Delete(Server.MapPath("~/midia/" + fileName + ""));
